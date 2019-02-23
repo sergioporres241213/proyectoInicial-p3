@@ -1,6 +1,5 @@
 package tienda;
 
-import java.io.File;
 import java.util.Scanner;
 
 public class Login {
@@ -17,5 +16,5 @@ public void run() {
         System.out.print("acceso denegado, intente de nuevo\n");
         System.exit(0);
     }
-}
+}//Metodo que se encarga del ingreso en el sistema y en el cual se indica la contraseña que se encargara del ingreso al sistema
 } 

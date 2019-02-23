@@ -5,8 +5,9 @@ import java.util.Scanner;
 
 public class ClienteCheque extends Cliente {
 
-    private double total;
-    private double subTotal;
+    private double total;//manejara el monto historico por modo de compra
+    private double subTotal;//manejara el monto total de la compra en curso
+    
     private final double MAX_COMPRA = 15000;//maximo para comprar en cheque
 
     public double getTotal() {
@@ -25,17 +26,16 @@ public class ClienteCheque extends Cliente {
     }
 
     public void ingresarProducto() {
-    subTotal = 0;
-    ArrayList<String> produ = new ArrayList<>();
+     subTotal = 0;//subTotal se inicia a 0 para el manejo de la cuenta actual
+    ArrayList<String> produ = new ArrayList<>();//ArrayList que maneja unicamente los productos, que van saliendo por compraEfectivo
     String opc = "S";
-
-        do {
+     do{
             
             Scanner x = new Scanner(System.in);
-            int cantidad = 0;
-            String prod;
-            Double valor;
-            
+            int cantidad = 0;//Variable que guardara la cantidad de productos ingresados por el usuario
+            String prod;//Variable que guardara el produto ingresado por el usuario
+            Double valor;//variable que guardara el precio del producto ingresado por el usario
+           
             System.out.print("Ingrese producto: ");
             prod = x.nextLine();
             System.out.print("Ingrese precio del producto: Q");
@@ -46,7 +46,7 @@ public class ClienteCheque extends Cliente {
             total += valor * cantidad;
             subTotal += valor * cantidad;
             
-            produ.add(prod);
+            produ.add(prod);//ingresamos al arraylist el String producto para manejar el articulo que sale de la tienda
             compra(total);
             System.out.print("¿Desea agregar otro producto? S/N: ");
             opc = x.next();
@@ -67,6 +67,6 @@ public class ClienteCheque extends Cliente {
             ingresarProducto();
         }
        
-    }
+    }//Metodo que se encarga de limitar la compra, para que no pase de 15000 quetzales
 
 }

@@ -15,7 +15,7 @@ public class Manejador {
         clienteCredito = new ClienteCredito();
     }
 
-    private void ImpresionClienteCheque() {
+    private void ImpresionClienteCheque() { 
         System.out.println("\n\n\n\n\n\n\n\n3.Cliente pago cheque");
             System.out.print("Nombre: ");
             clienteCheque.setNombres(sc.next());
@@ -28,7 +28,7 @@ public class Manejador {
         clienteCheque.ingresarProducto();
         System.out.println("Total a pagar es: " + clienteCheque.getsubTotal());
         Menu();
-    }
+    }//Metodo encargado de setear los valores heredados de clienteCheque, ingresar producto a clienteCheque y por ultimo, obtener subtotal de clienteCheque
     
     private void ImpresionClienteCredito() {
         System.out.println("\n\n\n\n\n\n\n\n2.Cliente pago credito");
@@ -41,9 +41,9 @@ public class Manejador {
             System.out.print("Nit: ");
             clienteCredito.setNit(sc.nextInt());
         clienteCredito.mPagos();
-        System.out.println("Total a pagar es: " + clienteCredito.getTotal());
+        System.out.println("Total a pagar es: " + clienteCredito.getsubTotal());
         Menu();
-    }
+    }//Metodo encargado de setear los valores heredados de clienteCredito, ingresar producto a clienteCredito y por ultimo, obtener subtotal de clienteCredito
 
     private void ImpresionClienteEfectivo(){
         System.out.println("\n\n\n\n\n\n\n\n1. Cliente pago efectivo");
@@ -56,9 +56,9 @@ public class Manejador {
             System.out.print("Nit: ");
             clienteEfectivo.setNit(sc.nextInt());
         clienteEfectivo.ingresarProducto();
-        System.out.println("Total a pagar es: " + clienteEfectivo.getTotal());
+        System.out.println("Total a pagar es: " + clienteEfectivo.getsubTotal());
         Menu();
-    }
+    }//Metodo encargado de setear los valores heredados de clienteEfectivo, ingresar producto a clienteEfectivo y por ultimo, obtener subtotal de clienteEfectivo
     
     private void generarCierre(){
         System.out.println("\n\n\n\n\n\n\n\nCierre del dia\n");
@@ -81,7 +81,7 @@ public class Manejador {
             System.out.println("3. Total de Credito: Q" + clienteCredito.getTotal());
         }
         System.out.println("-------------------------------------\n\n\n\n\n\n\n\n");
-    }  
+    }  //Metodo el cual muestra los valores totales por tipo de compra, esto por medio de los getters de cada tipo de compra
     
     public void Menu() {
         {
